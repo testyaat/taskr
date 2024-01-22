@@ -1,0 +1,1021 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/*asobi*/
+.selectedC{
+
+    color: #bbb;
+    
+}
+.userName{
+    white-space: nowrap; /* テキストを折り返さないように */
+  overflow: hidden; /* 超えた部分を隠す */
+  text-overflow: ellipsis; /* 超えた部分を「...」で省略 */
+  width: 180px;
+}
+.sessionTask:hover{
+    background-color: #565656;
+    color: #fff;
+}
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #565656;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.menu-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+
+.session {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.session:hover {
+    background: #f5f5f5;
+}
+.sessionDiv {
+    border-radius: 15px;
+    background-color: #DEDCDC;
+    border: 1px solid #000;
+    color: rgb(0, 0, 0);
+    min-height: 32px;
+    max-height: 95%;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 15px;
+    flex-shrink: 0;
+    overflow-y: hidden;
+}
+.sessionTask{
+    background-color: white;
+    border-radius: 15px;
+    border-color: black;
+    padding-bottom: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.session2{ /*縦スクロール*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height:80lvh;
+    border-bottom-left-radius: 10px; /* 左下の角を丸くする半径 */
+    border-bottom-right-radius: 10px; /* 右下の角を丸くする半径 */
+}
+
+.menuandcontent{
+    height: 100%;
+}
+.menublackb{
+    background-color: #000;
+    height: 50px;
+    font-size: 35px;
+    color: #fff;
+    display: none;
+}
+.content.content{
+    white-space: nowrap;
+    overflow-x: auto;
+    height: calc(100vh - 90px); /* 画面の高さから上下の余白を引いた高さ */
+    display: flex;
+    align-items: flex-start;
+}
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+/* モーダル全体のスタイル */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 背景を半透明の黒に */
+    overflow-y: scroll;
+}
+
+/* モーダル内のコンテンツのスタイル */
+.modal-content {
+    position: absolute; /* モーダル内のコンテンツを絶対位置で配置 */
+    top: 5%; /* 上端に配置 */
+    left: 50%; /* 水平方向は中央に配置するため50%に設定 */
+    transform: translateX(-50%); /* 水平方向に中央配置 */
+    max-height: 100%; /* 最大高さを100%に設定 */
+    min-height: 640px;
+    height: auto;
+    width: 900px;
+    padding: 0px; /* パディングを設定 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    
+}
+
+/* 閉じるボタンのスタイル */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+/*石川*/
+.deletemodal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#565656;
+    padding: 20px 110px 20px 10px;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上部に配置 */
+    align-items: flex-end; /* 右揃え */
+  }
+
+  .button-container {
+    position: absolute;
+    margin-top: auto; /* ボタンを下部に寄せるためにmargin-top: autoを使用 */
+    top: 55%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 318px;
+    height: 50px; /* 下部の色の高さ */
+    background: #fff; /* 下部の色 */
+    border-radius: 0 0 8px 8px;
+    margin-top: 20px; /* ボタンとの間隔を調整 */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+  }
+  
+  .delmodalbutton{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer; 
+    text-decoration:underline;
+  }
+#createTaskButton{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    margin-left: 100px;
+}
+#createFormButton{
+    background-color: #DEDCDC;
+    border-radius: 15px;
+    border: 1px solid #000;
+    padding: 20px 50px 20px 20px;
+}
+.project_main, .plus, .minus {
+    display: inline-block;
+    margin-right: 10px; /* 各要素の右側に余白を追加 */
+}
+.acc{
+    position: fixed;
+  bottom: 0;
+}
+.sessionContent {
+    display: flex;
+    align-items: center;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; /* 追加 */
+}
+.normalButton, .dropdownButton {
+    float: none;
+    clear: both;
+}
+.dropdownButton,
+.normalButton {
+    margin-left: auto; /* 追加 */
+}
+.dropdownButton {
+    padding: 7px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 0 15px 0 0;
+}
+.normalButton {
+    padding: 7px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+.sessionName {
+    font-weight: 700;
+    color: #565656;
+    max-width: 150px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+    width: 100%;
+    text-align: start;
+}
+/* ツールチップのスタイル */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border-radius: 5px; /* 角丸にする */
+    display: none;
+    z-index: 1; /* ツールチップを前面に表示 */
+}
+/* ツールチップの矢印スタイル */
+.tooltip1::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    border-width: 10px;
+    border-top-color: #000000; /* ボタンの背景色と同じにする */
+    transform: translateX(-50%);
+}
+.tooltip2::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    border-width: 10px;
+    border-top-color:#000000; /* ボタンの背景色と同じにする */
+    transform: translateX(-50%);
+}
+/* ホバー時にツールチップを表示 */
+.buttonContainer:hover .tooltip {
+    display: block;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdownContent a:hover {
+    background-color: #f1f1f1;
+}
+/* モーダル全体のスタイル */
+#taskdelModal {
+    width: 600px; /* 任意の幅 */
+    height: 400px; /* 任意の高さ */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    color: red;
+    border-radius: 10px; /* 丸い角の半径を設定 */
+  }
+  /* モーダル内のコンテンツのスタイル */
+  #taskdelModal h2 {
+    border-radius: 10px 10px 0 0    ;
+    color: rgb(255, 255, 255);
+    background-color: #565656;
+  }
+  #taskliststash{
+    max-height: 340px;
+    overflow-y: auto; /* コンテンツがモーダルより大きい場合にスクロール可能にする */
+  }
+  #taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+
+  }
+  /* 選択された場合のスタイル */
+#taskList li.selected {
+    background-color: rgb(0, 0, 0);
+    color: white; /* テキストを白色にするなど、必要に応じてスタイルを追加 */
+}
+.taskmodalbutton{
+    text-align: right;
+    background-color: #565656;
+}
+.deletebutton{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer; 
+    text-decoration:underline;
+}
+/* old 石川終わり */
+/* new 石川 */
+.formContainer{
+    display: none;
+}
+.formContainer input[type="text"] {
+    text-align: center;
+    background-color: #DDDDDD;
+    border: none;
+  }
+.formContainer input[type="text"]:focus{
+    outline: none;
+}
+ 
+/*test*/
+#FakecreateTaskButton{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    margin-left: 100px;
+}
+.Fakesession2{ /*縦スクロール*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height:80lvh;
+    border-bottom-left-radius: 10px; /* 左下の角を丸くする半径 */
+    border-bottom-right-radius: 10px; /* 右下の角を丸くする半径 */
+}
+.Faketooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border-radius: 5px; /* 角丸にする */
+    display: none;
+    z-index: 1; /* ツールチップを前面に表示 */
+}
+/* ツールチップの矢印スタイル */
+.Faketooltip1::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    border-width: 10px;
+    border-top-color: #000000; /* ボタンの背景色と同じにする */
+    transform: translateX(-50%);
+}
+.FakenormalButton{
+    float: none;
+    clear: both;
+    margin-left: auto; /* 追加 */
+    padding: 7px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+.FakebuttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; /* 追加 */
+}
+.FakesessionContent {
+    display: flex;
+    align-items: center;
+}
+.FakesessionDiv {
+    border-radius: 15px;
+    background-color: #DEDCDC;
+    border: 1px solid #000;
+    color: rgb(0, 0, 0);
+    min-height: 32px;
+    max-height: 95%;
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 15px;
+    flex-shrink: 0;
+    overflow-y: hidden;
+}
+[class^="taskContainer_"]{
+    background-color: white;
+    border-radius: 15px;
+    border-color: black;
+    padding-bottom: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    cursor: pointer;
+    display: none;
+}
+[class^="taskContainer_"] input[type="text"]{
+    border: none;
+    outline: none;
+}
+/* new　石川終わり */
+
+
+
+
+
+
+
+/* スタイルリセット */
+body, div, p, h1, h2, h3, ul, li, form, input, select {
+    margin: 0;
+    padding: 0;
+}
+/* 全体のスタイル */
+body {
+    font-family:  sans-serif;
+    background-color: #f8f8f8;
+}
+/*タスクのモーダルの中身*/
+/*　メニューバーのスタイル　*/
+.tmodal-menu-container{
+    background-color: #565656;
+    width: 900px;
+    height: 100px;
+    border-radius: 15px 15px 0 0;
+}
+.menu-tname-container{
+    padding: 20px 20px 0 20px;
+    background-color: #565656;
+    width: 860px;
+    height: 40px;
+    border-radius: 15px 15px 0 0;
+}
+.menu-tname-label{
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+.menu-bottom-container{
+    width: 900px;
+    height: 40px;
+    display: flex;
+}
+.menu-sname-container{
+    padding: 0 0 0 20px;
+    width: 500px;
+    height: 40px;
+    display: flex; 
+}
+.menu-sname_label{
+    width: 90px;
+    display: flex; align-items: center;
+    font-size: 1.0em;
+    color: #f5f5f5;
+}
+.modal_sname_item{
+    width: 100px;
+    display: flex; align-items: center;
+    font-size: 1.0em;
+    text-decoration: underline dotted;
+    color: #f5f5f5;
+}
+.menu-label-container, .menu-date-container{
+    height: 40px;
+    width: 100px;
+}
+.menu-label-item, .menu-date-item{
+    height: 40px;
+    display: flex; align-items: center;
+    color: #f5f5f5;
+}
+
+/*　メニューバーのスタイル終わり　*/
+/*　メインのコンテンツのスタイル　*/
+.tmodal-content-container{
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    height: auto;
+    min-height: 640px;
+    background-color: #ffffff;
+}
+/*　メインの左側のスタイル　*/
+.tmodal-left-container{
+    padding: 20px;
+    height: auto;
+    min-height: 640px;
+    width: 410px;
+    border-radius: 0 0 0 15px;
+    border-right: 1px solid #565656;
+}
+.content-date-label, .content-label-label, .content-memo-label{
+    font-size: 1.0em;
+    color: #565656;
+    margin: 20px 10px 5px 10px;
+}
+/* 日付のスタイル */
+.content-date-container{
+    height: auto;
+    width: 410px;
+}
+.content-date-item{
+    margin: 0 10px 10px 10px;
+}
+/* ラベルのスタイル */
+.content-label-container{
+    height: auto;
+    width: 410px;
+}
+.content-label-item {
+    margin: 5px;
+    padding: 8px;
+    white-space: nowrap;
+    border-radius: 0 15px 15px 0;
+}
+.content-label-item-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* メモのスタイル */
+.content-memo-container{
+    height: auto;
+    width: 410px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.content-memo-item{
+    min-height: 60px;
+    cursor: pointer;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
+.description{
+    width: 100%;
+    border-width: 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*　メインの右側のスタイル　*/
+.tmodal-right-container{
+    padding: 20px;
+    width: 410px;
+    height: auto;
+    min-height: 640px;
+    border-radius: 0 0 15px 0;
+    border-left: 1px solid #565656;
+}
+
+
+
+
+
+/*ポップアップ画面のスタイル*/
+/* ポップアップ共通のスタイル */
+.popup {
+    display: none;
+    z-index: 9999;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.pop-pname-menu,.pop-delete-menu, .pop-deletesession-menu,.pop-deletetask-menu,.pop-sname-menu,.pop-date-menu,.pop-label-menu{
+    height: 40px;
+    background-color: #565656;
+    border-radius: 15px 15px 0 0;  
+    display: flex;
+    justify-content: space-between;
+}
+.pop-pname-title,.pop-delete-title, .pop-deletesession-title,.pop-deletetask-title,.pop-sname-title,.pop-date-title,.pop-label-title{
+    white-space: nowrap;
+    height: 20px;
+    flex: 1;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    color: #ffffff;
+    font-size: 1.0em;
+    font-weight: bold;
+    background-color: #565656;
+}
+/* 削除一覧へ戻るボタン */
+.pop-back{
+    flex: 0;
+    height: 20px;
+    margin: 10px;
+    font-size: 1.0em;
+    color: #ffffff;
+    background-color: #565656;
+    font-weight: bold;
+}
+/* クローズボタン */
+.pop-close {
+    flex: 0;
+    height: 20px;
+    margin: 10px;
+    font-size: 1.0em;
+    color: #ffffff;
+    background-color: #565656;
+    font-weight: bold;   
+}
+/* プロジェクト名のポップアップ　*/
+.popupTypePname {
+    position: fixed;
+    top: 150px;
+    left: 210px;
+    width: 300px;
+    height: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-pname-container{
+    padding: 10px;
+}
+.pop-pname-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.pop-pname-content{
+    margin: 0 0 20px 0;
+}
+.pop-pname-label {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #565656;  
+}
+.pop-pname-create{
+    background-color: #DEDCDC;
+    width: 40px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #565656;
+    text-align: center;
+    font-weight: bold; 
+}
+/* 削除のポップアップ */
+.open-delete-menu{
+    
+}
+.popupTypeDelete {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-delete-container{
+    padding: 10px;
+}
+.pop-delete-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.pop-delete-label {
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+/* セクションの削除のポップアップ画面 */
+.popupTypeDeleteSession{
+    width: 540px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-deletesession-subtitle{
+    color: #565656;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: auto;
+}
+.pop-deletesession-label{
+    color: #565656;
+    font-size: 1.0em;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 40px 20px 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 80px;
+    width: auto;
+}
+.pop-deleteitem-container{
+    display: flex;
+    justify-content: flex-end; 
+    margin: 40px 20px 20px 20px;
+    height: 50px;
+    width: auto;
+}
+.delete-session-yes{
+    background-color: #eb7979;
+    width: 80px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.0em;
+    color: #ffffff;
+    font-weight: bold; 
+    text-align: center;
+    margin: 0 20px 0 10px;
+}
+.delete-session-no{
+    background-color: #DEDCDC;
+    height: 20px;
+    width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #565656;
+    text-align: center;  
+}
+/* タスクの選択削除のポップアップ */
+.popupTypeDeleteTask {
+    position: fixed;
+    top: 150px;
+    left: 210px;
+    width: 300px;
+    height: 440px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-deletetask-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: auto;
+}
+.pop-deletetask-content{
+    width: auto;
+    border: 1px solid #565656;
+    border-radius: 5px;
+    height: 280px;
+    margin: 10px;
+    padding: 5px;
+    overflow-y: auto;
+}
+.pop-deletetask-item{
+    border-radius: 5px;
+    height: 30px;
+    border-bottom: 1px solid #565656;
+}
+.delete-task-container{
+    display: flex;
+    justify-content: flex-end; 
+    height: 50px;
+    width: auto;
+}
+.delete-task{
+    background-color: #eb7979;
+    width: 80px;
+    height: 20px;
+    margin: 0 10px 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.0em;
+    color: #ffffff;
+    font-weight: bold; 
+    text-align: center;
+    margin: 0 20px 10px 0px;
+}
+/* セクション名のポップアップ */
+.popupTypeSname {
+    position: fixed;
+    top: 150px;
+    left: 420px;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-sname-container{
+    padding: 10px;
+}
+.pop-sname-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.pop-sname-label {
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+/* カスタムセレクトボックスのスタイル */
+.select_sname select {
+    appearance: none;
+    min-width: 100%;
+    height: 2.8em;
+    padding: .4em calc(.8em + 30px) .4em .8em;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #565656;
+    font-size: 1em;
+    cursor: pointer;
+}
+.select_sname select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+.select_sname select option[selected] {
+    background-color: #e6e6e6;
+}
+/* 期日のポップアップ */
+.popupTypeDate {
+    position: fixed;
+    top: 150px;
+    right: 300px;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-date-container{
+    padding: 10px;
+}
+.pop-date-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.pop-date-label {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+/* ラベルのポップアップ */
+.popupTypeLabel{
+    position: fixed;
+    top: 150px;
+    right: 200px; 
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.pop-label-container{
+    height: 30px;
+    display: flex;
+}
+.pop-label-left{
+    height: 439px;
+    width: 250px;
+    padding: 10px;
+    border-right: 1px solid #565656;
+    border-radius: 0 0 0 15px;
+    background-color: #ffffff; 
+}
+.result{
+    width: 228px;
+    height: 300px;
+    overflow-y: auto;
+}
+.label-checkbox{
+    width: 200px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.pop-label-right{
+    height: 439px;
+    width: 250px;
+    padding: 10px;
+    border-left: 1px solid #565656;
+    border-radius: 0 0 15px 0;
+    background-color: #ffffff; 
+}
+.pop-label-subtitle{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.pop-label-label{
+    color: #565656;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+input.label-input{
+    width: 225px;
+    height: 30px;
+}
+input.label-input:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+.lcolor-item{
+    text-align: center;
+}
+.pop-lname-container, .pop-lcolor-container{
+    padding: 20px 0 0 0;
+}
+.label-create-container{
+   margin-top: 80px;
+}
+.pop-label-create{
+    color: #DDD;
+    font-size: 0.9em;
+    font-weight: bold;  
+}
+.color-box {
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+.color-label {
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* 要素の位置を相対的に設定 */
+}
+.selected {
+    border-color: blue;
+}
+#result {
+    margin-top: 20px;
+}
+/* ポップアップのスタイル終わり */
+
+.messagebox {
+    border: 2px solid #000;
+    height: 500px;
+    margin-bottom: 10px; 
+    overflow-y: auto;
+}
+.text-con {
+    display: flex;
+  }
+  
+  .text-box {
+    /* 任意のスタイルを追加 */
+    border: 2px solid #000;
+    width: 410px;
+  }
+  
+  .sendtxt {
+    /* 任意のスタイルを追加 */
+    margin-left: 10px; /* 隣同士の間隔を調整するために、必要に応じて調整してください */
+  }
+  

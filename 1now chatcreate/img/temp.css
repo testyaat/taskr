@@ -1,0 +1,138 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+.taskb{
+display:table;height:100vh;
+display:table;width:80px;
+background-color: #6c6c6c;
+float: left;
+}
+.acb{
+  display:table;height:100Vh;
+  display:table;width:200px;
+  background-color: #c8c5c5;
+  float: left;
+ }
+ .img{
+ width: 100%;
+ }
+ .img2{
+   width: 90%;
+
+ }
+ .air{
+ height: 20px;
+ }
+ .btnpd{
+  border: none;
+   width: 10%;
+   height: 10%;
+  text-decoration: none;
+  float: right;
+  background: #c8c5c5;
+ }
+  .btnpd2{
+  border: none;
+   width: 10%;
+   height: 10%;
+  text-decoration: none;
+  float: right;
+  background: #c8c5c5;
+ }
+ 
+.btn{
+  background-color: #6c6c6c;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  line-height: 1;
+}
+.tab {
+      display: inline-block;
+      border-width: 1px 1px 0px 1px;
+      border-style: solid;
+      border-color: black;
+      border-radius: 0.75em 0.75em 0px 0px;
+      padding: 0.75em 1em;
+      color: black;
+      background-color: #e0e0e0;
+      font-weight: bold;
+   }
+ .tabcontent{
+ display: none;
+ border: 1px solid black;
+ padding: 1em;
+ background-color: #c8c5c5;
+  border: none;
+ }
+#tabcheck1:checked ~ #tabcontent1 { display: block;
+ border: none; }
+#tabcheck2:checked ~ #tabcontent2 { display: block; 
+ border: none;}
+ .tabbox input { display: none; }
+
+
+
+
+
+
+
+
+
+/*タブ切り替え全体のスタイル*/
+.tabs { 
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #c8c5c5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  color: #fff;
+}
